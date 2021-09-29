@@ -8,7 +8,7 @@ from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 
 class Encode(APIView):
     @staticmethod
-    def get(request):
+    def put(request):
         request_body = json.loads(request.body)
 
         response = {
@@ -21,7 +21,7 @@ class Encode(APIView):
 class Decode(APIView):
 
     @staticmethod
-    def get(request):
+    def put(request):
         request_body = json.loads(request.body)
 
         response = {
