@@ -44,7 +44,7 @@ def decode(text, *, separator="\n-weird-\n"):
 
     text, original_words = preprocess_encoding(text, separator)
 
-    if len(text) > 0 and text != " ":
+    if len(text) > 0 and original_words[0] != '':
         tokenize_re = re.compile(r"(\w+)", re.U)
 
         decode_keys = [
