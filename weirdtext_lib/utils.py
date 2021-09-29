@@ -16,10 +16,12 @@ def shuffle_word(word):
     was_shuffled = False
 
     while not was_shuffled:
-        if len(set(word[1:-1])) > 1:  # Check if chars (except first and last) in string are not the same
+        if (
+            len(set(word[1:-1])) > 1
+        ):  # Check if chars (except first and last) in string are not the same
             shuffle_list = list(word[1:-1])
             random.shuffle(shuffle_list)
-            shuffled_word = word[0] + ''.join(shuffle_list) + word[-1]
+            shuffled_word = word[0] + "".join(shuffle_list) + word[-1]
 
             was_shuffled = True if shuffled_word != word else False
 
@@ -43,15 +45,15 @@ def preprocess_encoding(text, separator):
     separator_count = sum(1 for _ in re.finditer(separator, text))
 
     if separator_count != 2:  # If amount of separators is not equal 2
-        raise SeparatorAmountException(
-            "Encoded text should have two separators!"
-        )
+        raise SeparatorAmountException("Encoded text should have two separators!")
 
-    if not text.lstrip(' ').startswith(separator):  # If there are others characters than separator at the beginning
+    if not text.lstrip(" ").startswith(
+        separator
+    ):  # If there are others characters than separator at the beginning
         raise SeparatorLocalisationException(
             "No separator at the beginning of the encoded text!"
         )
 
     _, text_separated, words_separated = text.split(separator)
 
-    return text_separated, words_separated.split(' ')
+    return text_separated, words_separated.split(" ")

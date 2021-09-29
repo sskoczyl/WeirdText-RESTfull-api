@@ -19,7 +19,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("v1/encode", views.Encode.as_view()),
     path("v1/decode", views.Decode.as_view()),
 ]

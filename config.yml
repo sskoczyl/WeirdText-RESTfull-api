@@ -21,6 +21,11 @@ jobs:
           command: |
             . venv/bin/activate
             pytest
+      - run:
+          name: Running lint
+          command: |
+            . venv/bin/activate
+            flake8 weird_text_api/ weirdtext_lib/ --ignore=E501,W503
       - store_artifacts:
           path: test-reports/
           destination: python_app

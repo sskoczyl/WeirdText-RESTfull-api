@@ -1,5 +1,3 @@
-import pytest
-
 from weirdtext_lib import weird_text
 
 
