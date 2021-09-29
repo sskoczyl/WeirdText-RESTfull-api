@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("v1/encode", views.encode),
-    path("v1/decode", views.decode),
+    path("v1/encode", views.Encode.as_view()),
+    path("v1/decode", views.Decode.as_view()),
 ]
