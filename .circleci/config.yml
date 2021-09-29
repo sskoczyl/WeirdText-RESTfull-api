@@ -32,7 +32,11 @@ jobs:
 
 orbs:
   heroku: circleci/heroku@0.0.10
+
 workflows:
+  build:
+    jobs:
+      - build
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
