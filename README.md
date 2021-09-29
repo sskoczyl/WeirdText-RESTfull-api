@@ -32,3 +32,13 @@ any of this endpoints PUT request must be send with JSON body:
 
 You will get JSON response with key `encode` or `decode`, corresponding to each endpoint.  
 Value for these keys will be encoded/ decoded text.
+
+# Example
+To test endpoints mentioned in section above following *bash* commands can be used:
+```
+curl -X PUT https://weird-text-api-szymos.herokuapp.com/v1/encode -H "Content-Type: application/json" -d '{"text": "This ia a long looong test sentence, \nwith some big (biiiig) words!"}'
+```
+```
+curl -X PUT https://weird-text-api-szymos.herokuapp.com/v1/decode -H "Content-Type: application/json" -d '{"text": "\n-weird-\nTihs ia a lnog loonog tset stnceene, \nwtih smoe big (biiiig) wrdos!\n-weird-\n"}'
+```
+Insead of `curl` it is easier `POSTMAN` application.
