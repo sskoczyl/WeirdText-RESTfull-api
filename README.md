@@ -39,6 +39,6 @@ To test endpoints mentioned in section above following *bash* commands can be us
 curl -X PUT https://weird-text-api-szymos.herokuapp.com/v1/encode -H "Content-Type: application/json" -d '{"text": "This ia a long looong test sentence, \nwith some big (biiiig) words!"}'
 ```
 ```
-curl -X PUT https://weird-text-api-szymos.herokuapp.com/v1/decode -H "Content-Type: application/json" -d '{"text": "\n-weird-\nTihs ia a lnog loonog tset stnceene, \nwtih smoe big (biiiig) wrdos!\n-weird-\n"}'
+curl -X PUT https://weird-text-api-szymos.herokuapp.com/v1/decode -H "Content-Type: application/json" -d '{"text": "\n-weird-\nTihs ia a lnog loonog tset stnceene, \nwtih smoe big (biiiig) wrdos!\n-weird-\nlong looong sentence some test This with words"}'
 ```
 Insead of `curl` it is easier `POSTMAN` application.
